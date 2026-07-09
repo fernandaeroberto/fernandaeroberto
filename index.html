@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fernanda & Roberto</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 29'%3E%3Cpath d='M16 28 C6 20 0 13 0 8 C0 3 4 0 8 0 C11 0 14 2 16 5 C18 2 21 0 24 0 C28 0 32 3 32 8 C32 13 26 20 16 28 Z' fill='%23e79fb1'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
@@ -211,6 +212,24 @@
   #reasonCard.pop{transform:scale(1.04)}
   #reasonCard .r{font-family:'Dancing Script',cursive;font-size:26px;color:var(--rose-deep)}
   #reasonCount{font-family:Arial,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:10px;min-height:14px}
+  .tap-hearts{position:fixed;inset:0;pointer-events:none;z-index:45;overflow:hidden}
+  .tap-hearts b{position:absolute;will-change:transform,opacity;animation:tapfloat 1.1s ease-out forwards}
+  @keyframes tapfloat{0%{transform:translate(0,0) scale(.4);opacity:0}20%{opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(1.05);opacity:0}}
+  .sparkles{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+  .sparkles i{position:absolute;color:#e0c67f;font-style:normal;font-size:16px;opacity:0;animation:twinkle 4.5s ease-in-out infinite}
+  @keyframes twinkle{0%,100%{opacity:0;transform:scale(.5)}50%{opacity:.65;transform:scale(1)}}
+  .timeline{max-width:470px;margin:10px auto 0;position:relative;padding-left:44px}
+  .timeline::before{content:"";position:absolute;left:13px;top:8px;bottom:8px;width:3px;background:linear-gradient(var(--rose),var(--gold-lt));border-radius:2px}
+  .tl-item{position:relative;margin:0 0 26px;text-align:left}
+  .tl-dot{position:absolute;left:5px;top:4px;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--rose-deep)}
+  .tl-dot::after{content:"";position:absolute;left:4px;top:4px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  .tl-date{font-family:'Dancing Script',cursive;font-size:25px;color:var(--rose-deep);line-height:1.15;margin-bottom:2px}
+  .tl-text{font-size:19px;color:var(--plum);line-height:1.4}
+  .love-btn{cursor:pointer;font-family:'Great Vibes',cursive;font-size:36px;color:#fff;background:linear-gradient(90deg,var(--rose),var(--rose-deep));border:none;border-radius:44px;padding:10px 44px;box-shadow:0 12px 30px rgba(207,113,137,.4);transition:transform .15s ease}
+  .love-btn:active{transform:scale(.96)}
+  .love-msg{max-height:0;overflow:hidden;opacity:0;transition:max-height .9s ease,opacity .9s ease;margin-top:18px}
+  .love-msg.show{max-height:420px;opacity:1}
+  .love-msg .r{font-family:'Great Vibes',cursive;font-size:clamp(56px,18vw,100px);color:var(--rose-deep);line-height:1;margin:0 auto}
 </style>
 </head>
 <body>
@@ -267,6 +286,21 @@
     <p class="big">Dois evitativos. Foi assim que a nossa história começou. A gente se conheceu e, por muito tempo, evitou colocar nome no que sentia. Evitamos o <em>“eu te amo”</em>, evitamos o <em>“amor”</em>.</p>
     <p class="big">Mas, no meio de tanto evitar, a gente encontrou uma coisa da qual não deu mais para fugir: <b>a paz</b>. Aquela paz gostosa que eu sinto sempre que estou perto de você.</p>
     <p class="big">A nossa conexão é surreal. A gente se ama de um jeito que eu nem sei explicar direito, e se encaixa em tudo, do bom humor na hora de acordar até a maior intimidade do mundo antes de dormir.</p>
+  </section>
+
+  <!-- LINHA DO TEMPO -->
+  <section class="block reveal">
+    <div class="divider">❦</div>
+    <h2>A nossa linha do tempo</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">03 · 05 · 2025</div><div class="tl-text">O dia em que a gente se conheceu</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">12 · 06 · 2025</div><div class="tl-text">O nosso primeiro Dia dos Namorados</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">06 · 08 · 2025</div><div class="tl-text">O aniversário do meu Lindo</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">14 · 10 · 2025</div><div class="tl-text">O meu aniversário, do seu lado</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">31 · 12 · 2025</div><div class="tl-text">Réveillon em Milagres</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">03 · 05 · 2026</div><div class="tl-text">Um ano de nós</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Junho de 2026</div><div class="tl-text">A decisão do nosso namoro e o começo da reforma do nosso lar</div></div>
+    </div>
   </section>
 
   <!-- FOTO PRAIA -->
@@ -1621,6 +1655,15 @@
     </div>
   </section>
 
+  <!-- EU TE AMO -->
+  <section class="block reveal">
+    <div class="divider">♥ ♥ ♥</div>
+    <div style="text-align:center">
+      <button id="loveBtn" class="love-btn">Clique aqui</button>
+      <div id="loveMsg" class="love-msg"><div class="r">te amo!</div></div>
+    </div>
+  </section>
+
   <!-- ASSINATURA -->
   <section class="block reveal">
     <div class="divider">♥ ♥ ♥</div>
@@ -1751,6 +1794,54 @@
         flap.querySelector('.hint').textContent = 'toque para abrir';
       }
     });
+  })();
+</script>
+<script>
+  // chuva de coraçõezinhos ao tocar na tela
+  (function(){
+    var layer=document.createElement('div'); layer.className='tap-hearts'; document.body.appendChild(layer);
+    var colors=['#f2b8c4','#e79fb1','#cf7189','#e0c67f','#f6c9d5'];
+    function burst(x,y){
+      for(var i=0;i<6;i++){
+        var b=document.createElement('b');
+        var c=colors[Math.floor(Math.random()*colors.length)];
+        var s=10+Math.random()*14;
+        b.style.left=x+'px'; b.style.top=y+'px';
+        b.style.setProperty('--dx',(Math.random()*120-60)+'px');
+        b.style.setProperty('--dy',(-40-Math.random()*90)+'px');
+        b.innerHTML='<svg width="'+s+'" height="'+s+'" viewBox="0 0 32 29" xmlns="http://www.w3.org/2000/svg"><path d="M16 28 C6 20 0 13 0 8 C0 3 4 0 8 0 C11 0 14 2 16 5 C18 2 21 0 24 0 C28 0 32 3 32 8 C32 13 26 20 16 28 Z" fill="'+c+'"/></svg>';
+        layer.appendChild(b);
+        (function(el){ setTimeout(function(){ el.remove(); },1200); })(b);
+      }
+    }
+    document.addEventListener('click',function(e){ burst(e.clientX,e.clientY); });
+    var lb=document.getElementById('loveBtn'), lm=document.getElementById('loveMsg');
+    if(lb) lb.addEventListener('click',function(ev){
+      ev.stopPropagation();
+      if(lm) lm.classList.add('show');
+      var vw=window.innerWidth, vh=window.innerHeight;
+      for(var k=0;k<44;k++){ (function(k){ setTimeout(function(){
+        var b=document.createElement('b');
+        var c=colors[Math.floor(Math.random()*colors.length)]; var s=12+Math.random()*20;
+        b.style.left=(Math.random()*vw)+'px'; b.style.top=(vh+20)+'px';
+        b.style.setProperty('--dx',(Math.random()*80-40)+'px');
+        b.style.setProperty('--dy',(-vh-60)+'px');
+        b.style.animationDuration=(1.9+Math.random()*1.6)+'s';
+        b.innerHTML='<svg width="'+s+'" height="'+s+'" viewBox="0 0 32 29" xmlns="http://www.w3.org/2000/svg"><path d="M16 28 C6 20 0 13 0 8 C0 3 4 0 8 0 C11 0 14 2 16 5 C18 2 21 0 24 0 C28 0 32 3 32 8 C32 13 26 20 16 28 Z" fill="'+c+'"/></svg>';
+        layer.appendChild(b);
+        (function(el){ setTimeout(function(){ el.remove(); },3800); })(b);
+      }, k*35); })(k); }
+    });
+  })();
+  // brilhos dourados sutis
+  (function(){
+    var sp=document.createElement('div'); sp.className='sparkles'; document.body.appendChild(sp);
+    for(var i=0;i<7;i++){
+      var s=document.createElement('i'); s.textContent='\u2726';
+      s.style.left=Math.random()*100+'vw'; s.style.top=Math.random()*100+'vh';
+      s.style.fontSize=(12+Math.random()*10)+'px'; s.style.animationDelay=(Math.random()*4.5)+'s';
+      sp.appendChild(s);
+    }
   })();
 </script>
 </body>
